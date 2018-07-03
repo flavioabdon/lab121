@@ -7,6 +7,7 @@ public class Jugador {
   private int nroGoles;
   private int nroTarjetasAmarillas;
   private int nroTarjetarRojas;
+  // construcutores
   public Jugador(){
     nombre = "";
     nroCamiseta=0;
@@ -23,6 +24,7 @@ public class Jugador {
     this.nroTarjetasAmarillas=nroTarjetasAmarillas;
     this.nroTarjetarRojas=nroTarjetarRojas;
   }
+  // setters
   public String getNombre(){
     return this.nombre;
   }
@@ -42,6 +44,7 @@ public class Jugador {
     return nroTarjetarRojas;
   }
 
+  // getters
   public void setNombre(String nombre){
     this.nombre=nombre;
   }
@@ -60,37 +63,55 @@ public class Jugador {
   public void setNroTarRojas(int nroTarjetarRojas){
     this.nroTarjetarRojas=nroTarjetarRojas;
   }
+  // metodo que verifica una amonestacion
   public String  VerificaAmontestacion(){
 
     if(this.nroTarjetasAmarillas < 2){
-       return "*Jugador Habilitado.";
+      return "*Jugador Habilitado.";
     }
     else
     {
       return "*Jugador No Habilitado y fue expulsado";
     }
   }
-  public void RegistrarAmamonestacion(){
-	  this.setNroTarAmarillas(getNroTarAmarillas()+1);
-	  System.out.println(this.VerificaAmontestacion());
-  }
-  public void MostrarJugador() {
-	  System.out.println("Nombre:"+this.getNombre());
-	  System.out.println("Numero de camiseta:"+this.getNroCamiseta());
-	  System.out.println("Posicion:"+this.getPosicion());
-	  System.out.println("Nro Goles:"+this.getNroGoles());
-	  System.out.println("Nro Tar. amarillas:"+this.getNroTarAmarillas());
-	  System.out.println("Nro Tar. Rojas:"+this.getNroTarRojas());
-	  System.out.println("---------------------------------------");
-  }
-  public void comparaGoles(Jugador jug) {
-		if (this.nroGoles>jug.nroGoles) {
-			System.out.println(this.nombre +" Mayores goles que:"+jug.nombre );
-		}
-		else {
-			System.out.println(jug.nombre +" Mayores goles que "+this.nombre );
-		}
+  public boolean  VerificaAmontestacionBoolan(){
 
-	}
+    if(this.nroTarjetasAmarillas < 2){
+      // return "*Jugador Habilitado.";
+      true;
+    }
+    else
+    {
+      // return "*Jugador No Habilitado y fue expulsado";
+      false;
+    }
+  }
+  // registrar amonestacion
+  public void RegistrarAmamonestacion(){
+    this.setNroTarAmarillas(getNroTarAmarillas()+1);
+    System.out.println(this.VerificaAmontestacion());
+  }
+  // mostrar e imprimir los datos de un jugador
+  public void MostrarJugador() {
+    System.out.println("Nombre:"+this.getNombre());
+    System.out.println("Numero de camiseta:"+this.getNroCamiseta());
+    System.out.println("Posicion:"+this.getPosicion());
+    System.out.println("Nro Goles:"+this.getNroGoles());
+    System.out.println("Nro Tar. amarillas:"+this.getNroTarAmarillas());
+    System.out.println("Nro Tar. Rojas:"+this.getNroTarRojas());
+    System.out.println("---------------------------------------");
+  }
+
+  // comparar dos objetos
+
+  public void comparaGoles(Jugador jug) {
+    if (this.nroGoles>jug.nroGoles) {
+      System.out.println(this.nombre +"  tiene mayores goles que:"+jug.nombre );
+    }
+    else {
+      System.out.println(jug.nombre +"   tiene mayores goles que "+this.nombre );
+    }
+
+  }
 
 }

@@ -10,7 +10,7 @@ public class Main {
 		jugador2.MostrarJugador();
 
 
-		System.out.println("--------Registrar 2 amonestaciones a jugador 1--------");
+		System.out.println("-----Registrar 2 amonestaciones a jugador 1------");
 
 		System.out.println(">>>Registrar amonestacion");
 		jugador1.RegistrarAmamonestacion();
